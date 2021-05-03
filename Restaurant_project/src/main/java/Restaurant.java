@@ -32,17 +32,7 @@ public class Restaurant {
 
     public LocalTime getCurrentTime(){ return  LocalTime.now(); }
 
-    public List<Item> getMenu() {
-        return menu;
-    }
-
-    private Item findItemByName(String itemName){
-        for(Item item: menu) {
-            if(item.getName().equals(itemName))
-                return item;
-        }
-        return null;
-    }
+    
 
     public void addToMenu(String name, int price) {
         Item newItem = new Item(name,price);
