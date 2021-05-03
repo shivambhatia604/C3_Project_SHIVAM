@@ -16,6 +16,15 @@ public class Restaurant {
         this.openingTime = openingTime;
         this.closingTime = closingTime;
     }
+    public int getTotalPrice(List<String> itemName) {
+        int total = 0;
+        for(String items: itemName){
+            Item item = findItemByName(items);
+            int price = item.getPrice();
+            total= total + price;
+        }
+        return total;
+    }
 
     public boolean isRestaurantOpen() {
         LocalTime current = getCurrentTime();
