@@ -64,4 +64,19 @@ class RestaurantTest {
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+    //<<<<<<<<<<<<<<<<<<<<<<totalPriceOfItems>>>>>>>>>>>>>>>>>
+    @Test
+    public void getting_the_total_price_of_items(){
+
+
+        List<String> menuItems = new ArrayList<>();
+        menuItems.add("Sweet corn soup");
+        menuItems.add("Vegetable lasagne");
+        int totalPrice = restaurant.getTotalPrice(menuItems);
+
+        assertEquals(388,totalPrice);
+    }
+
+    //<<<<<<<<<<<<<<<<<<<<<<totalPriceOfItems>>>>>>>>>>>>>>>>>
+
 }
