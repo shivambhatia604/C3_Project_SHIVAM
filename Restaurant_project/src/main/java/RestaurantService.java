@@ -9,7 +9,15 @@ public class RestaurantService {
         restaurants.add(new Restaurant("Royal Dhaba", "Delhi",LocalTime.parse("10:00:00"), LocalTime.parse("22:00:00")));
     }
 
+    public Restaurant findRestaurantByName(String restaurantName) throws restaurantNotFoundException{
 
+        for(Restaurant res: restaurants ){
+            if(res.getName().equals(restaurantName)){
+                return res;
+            }
+        }
+        throw new restaurantNotFoundException(restaurantName);
+    }
 
 
     public Restaurant addRestaurant(String name, String location, LocalTime openingTime, LocalTime closingTime) {
